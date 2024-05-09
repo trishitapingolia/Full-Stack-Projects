@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const CartPage = () => {
   const [items, setitems] = useState([]);
+  console.log(items);
   const itemsInCart = () => {
     const totalItems = JSON.parse(localStorage.getItem("items")) || [];
     setitems(totalItems);
@@ -39,7 +40,7 @@ const CartPage = () => {
     const updatedItems = items.map(item => {
       if (item.productId === id) {
         const newQuantity = (item.quantity || 1) - 1;
-        return { ...item, quantity: newQuantity > 0 ? newQuantity : 0 };
+        return { ...item, quantity: newQuantity > 0 ? newQuantity : 1 };
       }
       return item;
     });
@@ -68,7 +69,7 @@ const CartPage = () => {
     console.log(totalAmount);
     const request = {
       amount: totalAmount,
-      products: items.map(item => item.productId),
+      products: items.map(item => ({ productId: item.productId, quantity: item.quantity || 1 })),
       status: "pending",
     }
     await axios.post(`${API_BASE_URL}/addorder`, request, CONFIG_OBJ)

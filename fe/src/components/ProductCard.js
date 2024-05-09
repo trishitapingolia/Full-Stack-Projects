@@ -9,7 +9,8 @@ const ProductCard = ({ imgSrc, title, description, price, productId }) => {
 
     const addtocart = (e) => {
         e.preventDefault();
-        const newItem = { productId, price, title, imgSrc };
+        const quantity = 1;
+        const newItem = { productId, price, title, imgSrc , quantity };
         let items = JSON.parse(localStorage.getItem("items")) || [];
         items.push(newItem);
         setIsAdded(true)

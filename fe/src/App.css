@@ -63,10 +63,10 @@
       font-family:monospace;
       cursor: pointer;
     }
-    .checkout-card-area{
+    /* .checkout-card-area{
       position: absolute;
       left: 1060px;
-    }
+    } */
   }
   
   /* Responsive Design - Adjust Image Width for Small and Medium Screens */

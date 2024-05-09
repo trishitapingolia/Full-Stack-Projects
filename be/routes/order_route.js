@@ -22,7 +22,11 @@ router.get('/orders/:id', protectedRoute, async(req, res) => {
         const id = req.params.id;
         const order = await OrderModel.findById(id)
             .populate('author', 'Name Email phoneNumber')
-            .populate('products', 'productName price');
+            .populate({
+                path: 'products',
+                select: 'productName price quantity', // Specify the fields you want to select
+                populate: { path: 'product', select: 'productName price' } // Populate the product field
+            });
 
         res.status(200).json({ order: order });
     } catch (err) {
@@ -45,14 +49,15 @@ router.get('/allorders', protectedByAdmin, async(req, res) => {
 
 router.post('/addorder', protectedRoute, async (req, res) => {
     const { amount, products, status } = req.body;
-    if (!amount || !products || !status) {
+    if (!amount || !products || !status ) {
         return res.status(400).json({ Error: "Please fill all the mandatory fields" });
     }
     req.user.password = undefined;
 
-    const productDetails = await Promise.all(products.map(async productId => {
-        const product = await ProductModel.findById(productId);
-        return product;
+    const productDetails = await Promise.all(products.map(async product => {
+        const { productId, quantity } = product;
+        const productInfo = await ProductModel.findById(productId);
+        return { product: productInfo, quantity };
     }));
 
     const orderObj = new OrderModel({

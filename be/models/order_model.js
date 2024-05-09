@@ -7,8 +7,13 @@ const OrderSchema = new mongoose.Schema({
         required: true
     },
     products:[
-        {type: ObjectId,
-        ref: "ProductModel"}
+        {product:{
+            type: ObjectId,
+            ref: "ProductModel"}, 
+        quantity:{
+            type: Number,
+            default:1}
+        }
     ],
     status:{
         type: String,

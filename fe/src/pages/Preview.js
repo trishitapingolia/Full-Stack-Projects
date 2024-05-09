@@ -83,17 +83,17 @@ const Preview = () => {
                             <h4>Items</h4>
                             {newOrder ? newOrder.products.map(product => {
                                 return (
-                                    <div className='row' key={product._id}>
+                                    <div className='row' key={product.product._id}>
                                         <div className='col'>
-                                            <strong className='p-name'>{product.productName}</strong>
+                                            <strong className='p-name'>{product.product.productName}</strong>
                                         </div>
                                         <div className='col container d-flex justify-content-center align-items-center'>
                                             <div className='float-end p-name'>
-                                                <span> 1 </span>
+                                                <span> {product.quantity}</span>
                                             </div>
                                         </div>
                                         <div className='col container d-flex justify-content-center align-items-center p-name'>
-                                            <span className='float-end'>&#x20b9;{product.price}</span>
+                                            <span className='float-end'>&#x20b9;{product.product.price}</span>
                                         </div>
                                     </div>
                                 )
