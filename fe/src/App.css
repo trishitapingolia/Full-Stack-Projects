@@ -52,6 +52,21 @@
       height: 80px;
       border-radius: 4px;
     }
+    .panels{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 150px;
+      color: white;
+      font-size: large;
+      font-weight: bold;
+      font-family:monospace;
+      cursor: pointer;
+    }
+    .checkout-card-area{
+      position: absolute;
+      left: 1060px;
+    }
   }
   
   /* Responsive Design - Adjust Image Width for Small and Medium Screens */
@@ -81,6 +96,23 @@
     .checkout{
       font-size: 10px !important;
       margin: 10px;
+    }
+    .panels{
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      height: 120px;
+      color: white;
+      font-size:medium;
+      font-weight: bold;
+      font-family:monospace;
+      cursor: pointer;
+    }
+    .p-image{
+      width: 50px;
+      height: 50px;
+      border-radius: 4px;
     }
   }
 
@@ -114,16 +146,4 @@
 
   .checked {
     color: orange;
-  }
-  
-  .panels{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 150px;
-    color: white;
-    font-size: large;
-    font-weight: bold;
-    font-family:monospace;
-    cursor: pointer;
   }

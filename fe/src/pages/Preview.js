@@ -61,8 +61,8 @@ const Preview = () => {
     return (
         <div className='container d-flex flex-column login'>
             <h1 className='mb-3 ms-3'>Preview Order</h1>
-            <div className='container d-flex'>
-                <div className='container d-flex flex-column'>
+            <div className='row container d-flex'>
+                <div className='col container d-flex flex-column'>
                     <div className='col mb-3'>
                         <div className='card p-4' style={{ maxWidth: "700px" }}>
                             <h4>Shipping</h4>
@@ -83,7 +83,7 @@ const Preview = () => {
                             <h4>Items</h4>
                             {newOrder ? newOrder.products.map(product => {
                                 return (
-                                    <div className='row'>
+                                    <div className='row' key={product._id}>
                                         <div className='col'>
                                             <strong className='p-name'>{product.productName}</strong>
                                         </div>
@@ -101,7 +101,7 @@ const Preview = () => {
                         </div>
                     </div>
                 </div>
-                <div className='col'>
+                <div className='col checkout-card-area'>
                     <table style={{ maxWidth: "300px" }} className='table checkout-card card'>
                         <p className='p-name m-3 mb-0' style={{ fontWeight: "bold", minWidth: "300px" }}>Order Summary</p>
                         <tbody>

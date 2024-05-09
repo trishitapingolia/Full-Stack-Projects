@@ -19,7 +19,7 @@ const Admin = () => {
         setPanel(<AllCustomers/>);
     }
     return (
-        <div className='container row'>
+        <div className='container-fluid row'>
             <div className='col-3'>
                 <div onClick={addproduct} className='panels' style={{ backgroundColor: "#20a8d8" }}>
                     + Add Product

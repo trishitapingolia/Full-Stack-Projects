@@ -49,7 +49,7 @@ const AllProducts = () => {
     }, [])
 
     return (
-        <div>
+        <div className='container' style={{maxHeight:"80vh" ,overflowY:"scroll"}}>
             <ToastContainer />
             {allProducts ? allProducts.map((product) => {
                 return (
