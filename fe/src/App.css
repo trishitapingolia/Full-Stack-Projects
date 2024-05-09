@@ -1,0 +1,129 @@
+.card:hover{
+    transform: scale(1.03);
+  }
+  
+  /* Responsive Design - Hide Cards on Small Screens */
+  @media screen and (max-width:567px) {
+    .cards:not(:first-child){
+      display: none;
+    }
+    
+  }
+  
+  /* Responsive Design - Hide Elements on Medium Screens */
+  @media (max-width:1024px) and (min-width:567px) {
+    #third{
+      display: none;
+    }
+    #forth{
+      display: none;
+    }
+  }
+  
+  
+  /* Responsive Design - Center Content on Larger Screens */
+  @media (min-width: 820px) {
+    .contactus {
+      display:flex;
+      margin: auto;
+      justify-content: center;
+    }
+    .login{
+      margin: 50px;
+    }
+    .product-card{
+      width: 90%;
+      float: inline-end;
+    }
+    .checkout-card{
+      width: 50%;
+    }
+    .product-img{
+      width: 50px;
+    }
+    .checkout{
+      margin: 15px;
+    }
+    .AddProduct{
+      background-color: aquamarine;
+    }
+    .p-image{
+      width: 80px;
+      height: 80px;
+      border-radius: 4px;
+    }
+  }
+  
+  /* Responsive Design - Adjust Image Width for Small and Medium Screens */
+  @media(max-width:500px){            /*for sm devices*/
+    .image{
+      width: 100%;
+    }
+    .input{
+      max-width: 500px;
+    }
+    .login{
+      margin: 60px;
+    }
+    .product-card{
+      width: 280px;
+    }
+    .product-img{
+      width: 20px;
+    }
+    .p-name{
+      font-size: x-small;
+    }
+    .checkout-card{
+      margin-top: 20px;
+      width: 280px;
+    }
+    .checkout{
+      font-size: 10px !important;
+      margin: 10px;
+    }
+  }
+
+  
+  @media (max-width:1024px) and (min-width:567px) {          /*for md devices*/
+    .image{
+      width: 95%;
+    }
+    
+  }
+  
+  /* Styling for Contact Us and Login Page Sections */
+  .contactus, .login-pg{
+    background-color: #e4e3e2;
+  }
+  
+  .cart-items{
+    width: 650px;
+  }
+  
+  .summary{
+    width: 400px;
+  }
+  
+  
+  /* Hover Effect Removal for Cart Items and Summary */
+  .cart-items:hover, .summary:hover{
+    transform: none;
+  }
+
+
+  .checked {
+    color: orange;
+  }
+  
+  .panels{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    font-family:monospace;
+    cursor: pointer;
+  }

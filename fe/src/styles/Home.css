@@ -1,0 +1,22 @@
+.bg-img{
+    color: white ;
+    text-shadow: 2px 2px rgb(144, 97, 58);
+    background-color: #cccccc;
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-image: url("https://images.unsplash.com/photo-1643057853749-dcf21d332c08?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+}
+
+.heading {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.buy-btn{
+    text-shadow: none;
+}
