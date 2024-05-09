@@ -29,7 +29,7 @@ const AllOrders = () => {
     }, [])
 
     return (
-        <div>
+        <div className='container' style={{maxHeight:"80vh" ,overflowY:"scroll"}}>
             <table className='table'>
                 <thead>
                     <tr>

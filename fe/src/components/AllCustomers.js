@@ -29,7 +29,7 @@ const AllCustomers = () => {
     }, [])
 
     return (
-        <div>
+        <div className='container' style={{maxHeight:"80vh" ,overflowY:"scroll"}}>
             <table className='table'>
                 <thead>
                     <tr>
@@ -50,7 +50,7 @@ const AllCustomers = () => {
                                 <td>{customer.email}</td>
                                 <td>{customer.phoneNumber}</td>
                                 <th scope='row'>{customer.isAdmin? "Admin" : "Customer"}</th>
-                                <td>{customer.address}</td>
+                                <td style={{minWidth:"500px"}}>{customer.address}</td>
                             </tr>
                         )
                     }) : ""}
