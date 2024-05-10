@@ -63,7 +63,8 @@ const Preview = () => {
             .then((response) => {
                 if (response.status === 201) {
                     setloading(false);
-                    console.log(response.data);
+                    const link = response.data.payment.links[1].href;
+                    window.location.href = link;
                 }
             })
             .catch((err) => {

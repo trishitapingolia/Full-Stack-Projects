@@ -25,8 +25,8 @@ router.post('/create-payment',protectedRoute, async (req, res) => {
             "payment_method": "paypal"
         },
         "redirect_urls": {
-            "return_url": "http://localhost:3000/success",
-            "cancel_url": "http://localhost:3000/cancel"
+            "return_url": "http://localhost:5000/success",
+            "cancel_url": "http://localhost:5000/cancel"
         },
         "transactions": [{
             "item_list": {
@@ -45,11 +45,7 @@ router.post('/create-payment',protectedRoute, async (req, res) => {
             throw error;
         } else {
             console.log(payment);
-            for (let i = 0; i < payment.links.length; i++) {
-                if (payment.links[i].rel === 'approval_url') {
-                    return res.redirect(payment.links[i].href);
-                }
-            }
+            res.status(201).json({ payment: payment});
         }
     });
 })
