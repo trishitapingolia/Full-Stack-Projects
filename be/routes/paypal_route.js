@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
-const paypal = require('paypal-rest-sdk');
+const OrderModel = mongoose.model('OrderModel');
+const ProductModel = mongoose.model('ProductModel');
 const protectedRoute = require('../middleware/protectedResource');
+const paypal = require('paypal-rest-sdk');
 
-router.post('/create-payment',protectedRoute, async (req, res) => {
+router.post('/create-payment', protectedRoute, async (req, res) => {
     const { order } = req.body;
     let totalAmount = 0;
     const items = [];
@@ -36,6 +38,7 @@ router.post('/create-payment',protectedRoute, async (req, res) => {
                 "currency": "USD",
                 "total": totalAmount
             },
+            "order_id": order._id,
             "description": "This is the payment description."
         }]
     };
@@ -45,32 +48,49 @@ router.post('/create-payment',protectedRoute, async (req, res) => {
             throw error;
         } else {
             console.log(payment);
-            res.status(201).json({ payment: payment});
+            res.status(201).json({ payment: payment });
         }
     });
 })
 router.get('/success', (req, res) => {
     const payerId = req.query.PayerID;
     const paymentId = req.query.paymentId;
-    const execute_json = {
-        payer_id: payerId,
-        transactions: [{
-            amount: {
-                currency: 'USD',
-                total: '2500'
-            }
-        }]
-    }
-    paypal.payment.execute(paymentId, execute_json, (err, payment) => {
-        if (err) {
-            console.log(err);
-            throw err;
-        } else {
-            console.log(JSON.stringify(payment));
-            res.send("Payment Successfull")
+
+    // Fetch the payment details from PayPal
+    paypal.payment.get(paymentId, function (error, payment) {
+        if (error) {
+            console.error(error);
+            return res.status(500).send('Error fetching payment details from PayPal');
         }
-    })
-})
+
+        // Extract total amount from the payment details
+        const totalAmount = payment.transactions[0].amount.total;
+
+        // Prepare JSON for executing the payment
+        const execute_json = {
+            payer_id: payerId,
+            transactions: [{
+                amount: {
+                    currency: 'USD',
+                    total: totalAmount
+                }
+            }]
+        };
+
+
+
+        // Execute the payment
+        paypal.payment.execute(paymentId, execute_json, (err, payment) => {
+            if (err) {
+                console.error(err);
+                return res.status(500).send('Error executing payment');
+            } else {
+                console.log(JSON.stringify(payment));
+                res.send("Payment Successful");
+            }
+        });
+    });
+});
 
 router.get('/cancel', (req, res) => {
     res.send('Payment Cancelled')
