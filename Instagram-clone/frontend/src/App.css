@@ -1,0 +1,91 @@
+@media (max-width: 576px) {
+  .post-img {
+    width: 95%;
+    max-height: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .profile {
+    width: 90px !important;
+    height: 90px !important;
+    object-fit: cover;
+  }
+
+  .postcards {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+
+  .carouselcards {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .upload-box{
+    width:300px;
+    height:200px;
+    border: dashed 2px rgb(168, 167, 167);
+    border-radius: 5px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .file-upload{
+    opacity: 0;
+    cursor: pointer;
+    width: 300px;
+    height: 200px;
+    position: absolute;
+  }
+}
+
+@media (min-width: 576px) {
+  .post-img {
+    border-radius: 8px;
+    width: 95%;
+    max-height: 230px;
+    object-fit: cover;
+  }
+
+  .postcards {
+    width: 330px;
+    height: 330px;
+    object-fit: cover;
+  }
+
+  .carouselcards {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+  }
+
+  .upload-box{
+    width:400px;
+    height:300px;
+    border: dashed 2px rgb(168, 167, 167);
+    border-radius: 5px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .file-upload{
+    opacity: 0;
+    cursor: pointer;
+    width: 400px;
+    height: 300px;
+    position: absolute;
+  }
+}
+
+
+
+
