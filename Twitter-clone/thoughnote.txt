@@ -1,0 +1,23 @@
+This is the thoughtnote for Twitter clone project:
+
+
+Frontend:
+All Pages -> Feed.js Login.js Register.js Profile.js
+The design is similar to the ones in problem statement
+Success and Error handling using Toastify
+Authentication working properly except-> user is getting logged out while any post,put req.
+All code is neat and properly structured
+
+
+Backend:
+All APIs are working properly
+user and tweet Schema defined properly for MongoDb
+appropriate success, error messagees and appropriate status codes sent are  when required
+Image upload is not working properly
+ALl code is neat and are in structured folders.
+
+Problem Areas-> Frontend is not responsive
+		 Connection of Backend to Frontend is lacking in most areas.
+----------------------------------------------------------------------------------------------------------------------------------------
+
+This project is still incomplete and submitting due to deadlines.--------------->>>>>>IMPORTANT

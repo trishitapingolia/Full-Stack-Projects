@@ -1,0 +1,78 @@
+.feed{
+    border-left: 1px solid rgb(194, 191, 191);
+    border-right: 1px solid rgb(194, 191, 191);
+}
+
+.tweetbtn{
+    color: white !important;
+    background-color: rgb(28, 162, 251) !important;
+}
+
+.tweetcard{
+    border: 1px solid rgb(194, 191, 191);
+    padding: 10px;
+}
+
+
+.post-img {
+    border-radius: 8px;
+    width: 95%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.commentBox{
+    border-left: 1px solid rgb(194, 191, 191);
+    border-right: 1px solid rgb(194, 191, 191);
+    border-bottom: 1px solid rgb(194, 191, 191);
+    padding: 10px;
+}
+
+.banner{
+    width: 100;
+    background-color: rgb(28, 162, 251);
+    height: 150px;
+}
+
+.profile{
+    position: relative;
+    bottom: 35px;
+}
+
+.reg-loginbox{
+    width: 700px;
+    height: 400px;
+    margin-top: 40px;
+}
+
+.reg-loginbox .col-5{
+    border-top-left-radius: 13px;
+    border-bottom-left-radius: 13px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.reg-loginbox .col-7{
+    border-top-right-radius: 13px;
+    border-bottom-right-radius: 13px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 576px) {
+    .editicon {
+        position: absolute;
+        left: 90px;
+    }
+    .username{
+        padding-left: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .editicon {
+        position: absolute;
+        left: 30px;
+    }
+    .username{
+        padding-left: 50px;
+    }
+}
+
