@@ -1,12 +1,16 @@
 const express = require('express');
-const PORT =5000;
 const app = express();
 const cors = require('cors');
 const mongoose = require('mongoose');
 const paypal = require('paypal-rest-sdk');
-const {MONGODB_URL}= require('./config');
-const {CLIENT_ID}= require('./config');
-const {CLIENT_SECRET}= require('./config');
+const dotenv = require('dotenv');
+
+dotenv.config();
+
+const PORT = process.env.PORT;
+const MONGODB_URL = process.env.MONGODB_URL;
+const CLIENT_ID = process.env.CLIENT_ID;
+const CLIENT_SECRET = process.env.CLIENT_SECRET;
 
 global.__basedir = __dirname;
 

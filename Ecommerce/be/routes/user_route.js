@@ -1,10 +1,14 @@
 const express = require('express');
+const dotenv = require('dotenv');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
 const bcryptjs = require('bcryptjs');
-const { JWT_SECRET } = require('../config');
 const protectedByAdmin = require('../middleware/protectedByAdmin');
 const protectedRoute = require('../middleware/protectedResource');
+
+dotenv.config();
+
+const JWT_SECRET = process.env.JWT_SECRET;
 
 const mongoose = require('mongoose');
 const UserModel = mongoose.model("UserModel");
