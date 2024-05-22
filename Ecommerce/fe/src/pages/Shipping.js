@@ -1,14 +1,10 @@
 import React, { useState } from 'react'
 import {Link, useParams } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
+import { API_BASE_URL } from '../config';
 import axios from 'axios';
 import {useSelector} from "react-redux";
 import { useNavigate } from 'react-router-dom';
-const dotenv = require('dotenv');
-
-dotenv.config();
-
-const API_BASE_URL = process.env.API_BASE_URL;
 
 const Shipping = () => {
   const user = useSelector(state => state.userReducer);
