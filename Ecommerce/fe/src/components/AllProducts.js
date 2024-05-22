@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react'
-import { API_BASE_URL } from '../config';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+const dotenv = require('dotenv');
+
+dotenv.config();
+
+const API_BASE_URL = process.env.API_BASE_URL;
 
 const AllProducts = () => {
     const [allProducts, setAllProducts] = useState([]);

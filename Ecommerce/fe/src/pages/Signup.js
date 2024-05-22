@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import {API_BASE_URL} from '../config';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+const dotenv = require('dotenv');
+
+dotenv.config();
+
+const API_BASE_URL = process.env.API_BASE_URL;
 
 const Signup = () => {
     const [Name, setName] = useState("");

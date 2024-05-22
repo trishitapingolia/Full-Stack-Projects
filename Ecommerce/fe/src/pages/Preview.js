@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { API_BASE_URL } from '../config';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+const dotenv = require('dotenv');
+
+dotenv.config();
+
+const API_BASE_URL = process.env.API_BASE_URL;
 
 const Preview = () => {
     const user = useSelector(state => state.userReducer)

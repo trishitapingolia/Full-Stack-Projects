@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { API_BASE_URL } from '../config';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+const dotenv = require('dotenv');
+
+dotenv.config();
+
+const API_BASE_URL = process.env.API_BASE_URL;
 
 const CartPage = () => {
   const [items, setitems] = useState([]);
