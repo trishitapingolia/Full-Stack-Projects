@@ -6,7 +6,7 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { useDispatch } from 'react-redux';
-import {useNavigate} from  'react-router-dom';
+import {useNavigate, Link} from  'react-router-dom';
 
 
 const Login = () => {
@@ -65,7 +65,7 @@ const Login = () => {
                         <span className="visually-hidden">Loading...</span>
                     </div> : ""}
                 </Button>
-                <p>New customer?<a href='/signup'>Create your account</a></p>
+                <p>New customer?<Link to='/signup'>Create your account</Link></p>
             </Form>
         </div>
     )
