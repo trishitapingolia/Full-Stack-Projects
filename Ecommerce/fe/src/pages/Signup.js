@@ -5,6 +5,7 @@ import {API_BASE_URL} from '../config';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import {Link} from 'react-router-dom';
 
 const Signup = () => {
     const [Name, setName] = useState("");
@@ -72,7 +73,7 @@ const Signup = () => {
                       <span className="visually-hidden">Loading...</span>
                     </div> : ""}
                 </Button>
-                <p>Already a customer?<a href='/login'>Login here</a></p>
+                <p>Already a customer?<Link to='/login'>Login here</Link></p>
             </Form>
         </div>
     )
