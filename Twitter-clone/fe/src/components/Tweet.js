@@ -6,7 +6,7 @@ import { API_BASE_URL } from '../config';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from 'react-router-dom';
-import TweetDetail from './TweetDetail';
+// import TweetDetail from './TweetDetail';
 
 
 const Tweet = (props) => {

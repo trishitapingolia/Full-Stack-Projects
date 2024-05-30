@@ -6,7 +6,7 @@ import axios from 'axios';
 import { API_BASE_URL } from '../config';
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
 

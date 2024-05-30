@@ -7,7 +7,7 @@ dotenv.config();
 const PORT= process.env.PORT;
 
 const mongoose = require('mongoose');
-const {MONGODB_URL}= require('./config');
+const MONGODB_URL= process.env.MONGODB_URL;
 
 global.__basedir = __dirname;
 
